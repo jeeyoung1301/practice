@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+
+    <script>
+        $(document).ready(function(){
+           var myslide = $('.slider').bxSlider({controls:false,pagerCustom:'.bxPager'});
+            $('.nextBtn').click(function(){myslide.goToNextSlide();});
+            $('.prevBtn').click(function(){myslide.goToPrevSlide();});
+        });
+    </script>
+
+    <style>
+            .bx-wrapper {
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border:none;
+                background: #fff;
+                margin-bottom: 0;
+            }
+            .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+                position: absolute;
+                bottom: 15px;
+                width: 100%;
+            }
+
+            /* common  */
+            .line:after{content:"";display: block;background: #000;
+            width: 100px;height: 2px;margin: 10px auto;}
+            .bg1{background-color: skyblue;}
+            .bg2{
+                background: url(images/pc03.jpg) no-repeat center;
+                background-size: cover;background-attachment: fixed;
+            }
+            .tshadow{text-shadow: 0 0 10px rgba(225,225,225, 0.8);}
+        
+        @media screen and (min-width:700px) {
+            /* header */
+            .utilWrap{border-bottom: 1px solid #c4c4c4;}
+            .util{width: 980px;margin: 0 auto;}
+            .util ul{float: right;}
+            .util li{float: left;}
+            .util a{
+                position: relative;
+                display: block;
+                padding: 0 10px;
+                font-size: 14px;
+                color:#888;
+                line-height: 26px;
+            }
+            .util a:after{
+                content:"";
+                width: 1px;height: 10px;
+                background-color: #888;
+                position: absolute;top: 9px;right: 0;
+            }
+
+            .logoWrap{width: 980px;margin: 0 auto;}
+            .logo{text-align: center;padding: 25px 0;}
+
+            .navWrap{background: #1D5DA4;}
+            .menu{width: 980px;margin: 0 auto;}
+            .menu li{
+                float: left;
+                width: calc( 100% / 6 );
+                text-align: center;
+                border-right: 1px solid #336DAC;
+                line-height: 42px;
+            }
+            .menu li:first-child{border-left: 1px solid #336DAC;}
+            .menu a{color:white;display: block;}
+            .menu a:hover{background: #0064CD;}
+            
+            /* slide  */
+            .sliderWrap{position: relative;width: 980px;margin: 0 auto;}
+            .sliderWrap .txt{position: absolute;left: 15%;top:15%;width: 400px;}
+            .sliderWrap .txt h1{
+                font-size: 60px;
+                letter-spacing: 15px;
+                padding-bottom: 30px;
+                color: #c4c4c4;
+                text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+            }
+            .sliderWrap .txt h5{
+                font-size: 14px;
+                padding-bottom: 15px;
+                color: #c4c4c4;
+                text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+                line-height: 25px;
+            }
+            .sliderWrap .txt a{
+                border: 1px solid #c4c4c4;
+                font-size: 12px;font-weight: bold;
+                width: 120px;
+                padding: 5px 0px;
+                border-radius: 10px;
+                color: #c4c4c4;
+                box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.8);
+                display: block;text-align: center;
+            }
+            .sliderWrap .txt a:hover{background: #000;transition: 0.3s;}
+
+            .nextBtn{right: 0;}
+            .prevBtn{left: 0;}
+            .prevBtn,.nextBtn{position: absolute;top:50%;margin-top: -50px;cursor: pointer;}
+
+            .sliderPager{position: absolute;bottom: 40px;right: 0;width: 100%}
+            .sliderPager .bxPager{position: absolute;right: 0;}
+            .sliderPager .bxPager a{
+                display: block;float: left;
+                height: calc( 100% / 3);text-align: center;
+                background-color: rgba(51,109,172,0.5);
+                border: 1px solid rgba(0,0,0,0.5);
+                border-radius: 5px;
+                font-size: 14px;
+                padding: 10px;
+                color:white;
+                display: flex;justify-content: center;align-items: center;
+            }
+            .sliderPager .bxPager a:hover{
+                background-color: rgba(0,100,205,0.5);
+                color:white;
+            }
+            .sliderPager .bxPager a.active{background: #000;}
+
+            /* container1  */
+            .containerWrap1{background: skyblue;}
+            .container1{width: 980px;margin: 0 auto;}
+            .container1 li{
+                float: left;
+                background: rgba(51,109,172,0.8);
+                width: calc( 100% / 5 );
+                /* margin-right: 10px; */
+                height: 190px;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(0,0,0,0.2);
+                display:flex;align-items: center;justify-content: center;
+            }
+            /* .container li:last-child{margin-right: 0;} */
+            .container1 li img{width: 100px;height: 101px;}
+            .container1 li .overlay{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                display:flex;align-items: center;justify-content: center;
+                position: absolute;top: 100%;left: 0;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+            .container1 li .txt{text-align: center;color:white;}
+            .container1 li .txt p{font-size: 14px;}
+            .container1 li:hover .overlay{top: 0;left: 0;}
+
+            /* container2  */
+            /* .containerWrap2{background-color: skyblue;} */
+            .container2{width: 640px;margin: 0 auto;text-align: center;}
+            .container2 li{
+                float: left;
+                width: calc( (100% - 40px) / 3 );
+                margin-right: 20px;
+                height: 170px;
+                position: relative;
+                overflow: hidden;
+                display:flex;align-items: center;justify-content: center;
+            }
+            .container2 li:last-child{margin-right: 0;}
+            .container2 li img{width: 50%;height: 50%;}
+            .container2 li .overlay{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                display:flex;align-items: center;justify-content: center;
+                position: absolute;right: 100%;
+                transition: 0.4s;
+                cursor: pointer;
+            }
+            .container2 li .txt{text-align: center;color:white;}
+            .container2 li .txt p{font-size: 14px;}
+            .container2 li:hover .overlay{right: 0;}
+
+            .container2 h3{padding: 30px 0 10px 0;}
+            .container2 p{margin-bottom: 30px;}
+
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- header start -->
+    <div id="headerWrap">
+        <div class="utilWrap">
+            <div class="util clearfix">
+                <ul class="clearfix">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="logoWrap">
+            <div class="logo">
+                <h1>하이미디어</h1>
+                <div class="toggle">
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                    <div class="box3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="navWrap">
+            <div class="menu">
+                <ul class="clearfix">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">제품소개</a></li>
+                    <li><a href="#">사업영역</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                    <li><a href="#">인재채용</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- header end  -->
+
+    <!-- slide start -->
+    <div class="sliderWrap">
+        <ul class="slider">
+            <li>
+                <div class="txt">
+                    <h1>NEXT <br>ENERGY </h1>
+                    <h5>하이미디어는 친환경 에너지 기술을 선도하며 <br>미래를 향해 도약하고자합니다. </h5>
+                    <a href="#">바로가기</a>
+                </div>
+                <img src="images/pc01.jpg" alt="img01">
+            </li>
+            <li>
+                <div class="txt">
+                    <h1>NEXT <br>ENERGY </h1>
+                    <h5>유자에너지는 태양열발전 등 그린에너지와 <br>바이오 사업을 통해 신성장 동력을 강화하고 있습니다. </h5>
+                    <a href="#">바로가기</a>
+                </div>
+                <img src="images/pc02.jpg" alt="img02">
+            </li>
+            <li>
+                <div class="txt">
+                    <h1>NEXT <br>ENERGY </h1>
+                    <h5>풍부한 경험과 최고의 기술력으로 새로운 미래를 열어갑니다. <br>장기적인 비전을 통한 끊임없는 성장을 이룹니다. </h5>
+                    <a href="#">바로가기</a>
+                </div>
+                <img src="images/pc03.jpg" alt="img03">
+            </li>
+        </ul>
+        <div class="nextBtn"><img src="images/btn_right.png" alt="nextBtn"></div>
+        <div class="prevBtn"><img src="images/btn_left.png" alt="prevBtn"></div>
+        <div class="sliderPager">
+            <div class="bxPager clearfix">
+                <a href="#" data-slide-index="0">회사개요</a>
+                <a href="#" data-slide-index="1">사업분야</a>
+                <a href="#" data-slide-index="2">환경경영</a>
+            </div>
+        </div>
+    </div>
+    <!-- slide end -->
+
+    <!-- content start -->
+    <div class="containerWrap1">
+        <div class="container1">
+            <ul class="clearfix">
+                <li>
+                    <img src="images/icon01.png" alt="icon01">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>사회공헌</h3>
+                            <p>소외된 이웃과 함께합니다.</p>
+                        </div>
+                    </div>
+                </li>               
+                <li>
+                    <img src="images/icon02.png" alt="icon02">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>윤리경영</h3>
+                            <p>공정한 경쟁을 추구합니다.</p>
+                        </div>
+                    </div>
+                </li>                
+                <li>
+                    <img src="images/icon03.png" alt="icon03">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>인재채용</h3>
+                            <p>열정 넘치는 인재를 모십니다.</p>
+                        </div>
+                    </div>
+                </li>    
+                <li>
+                    <img src="images/icon04.png" alt="icon04">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>기업문화</h3>
+                            <p>유자의 가치를 소개합니다.</p>
+                        </div>
+                    </div>
+                </li>                
+                <li>
+                    <img src="images/icon05.png" alt="icon05">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>비전</h3>
+                            <p>유자는 미래를 선도합니다.</p>
+                        </div>
+                    </div>
+                </li>               
+            </ul>
+        </div>
+    </div>
+    <div class="containerWrap2 bg2">
+        <div class="container2">
+            <h3 class="line tshadow">NEWS</h3>
+            <p class="tshadow">Lorem ipsum dolor sit.</p>
+            <ul class="clearfix">
+                <li>
+                    <img src="images/content_icon01.png" alt="content_icon01">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>사보</h3>
+                            <p>풍부한 경험과 <br> 최고의 기술력으로 <br> 새로운 미래를 열어갑니다.</p>
+                        </div>
+                    </div>
+                </li>               
+                <li>
+                    <img src="images/content_icon02.png" alt="content_icon02">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>찾아오시는 길</h3>
+                            <p>서울시 영등포구 여의도동</p>
+                        </div>
+                    </div>
+                </li>                
+                <li>
+                    <img src="images/content_icon03.png" alt="content_icon03">
+                    <div class="overlay">
+                        <div class="txt">
+                            <h3>제품정보</h3>
+                            <p>유자의 가치를 소개합니다.</p>
+                        </div>
+                    </div>
+                </li>                      
+            </ul>
+        </div>
+    </div>
+    <div style="height: 1000px;"></div>
+    <!-- content end -->
+</body>
+</html>
