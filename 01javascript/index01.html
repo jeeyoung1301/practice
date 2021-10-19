@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{font-size: 2em;}
+        h1{background-color: #fff000;}
+
+        .ilbuni{
+            display: inline-block;
+            list-style: none;
+        }
+        .ilbuni img{
+            width: 100px;
+        }
+    </style>
+
+    <!-- <script>
+        window.addEventListener('load',function(){
+            var title = document.getElementById('main-title');
+            console.log(title);
+        })
+    </script> -->
+</head>
+<body>
+    <h1 id="main-title">
+        <span>hello0</span>
+        <span>hello1</span>
+        <span>hello2</span>
+        DOM (Document Object Model)
+    </h1>
+    <ul>
+        <li class="ilbuni"><img src="../images/content_icon01.png" alt=""></li>
+        <li class="ilbuni"><img src="../images/content_icon02.png" alt=""></li>
+        <li class="ilbuni"><img src="../images/content_icon03.png" alt=""></li>
+    </ul>
+
+    <script>
+    var ilbuni = document.querySelectorAll('.ilbuni');
+    for(i=0;i<ilbuni.length;i++){
+        ilbuni[i].style.border = '1px solid #000'
+    }
+    var ilbun = document.querySelector('.ilbuni img')
+    console.log(ilbun.getAttribute('src'))
+
+    var title = document.getElementById('main-title');
+    var titleSpan= title.getElementsByTagName('span')
+    console.log(titleSpan[0])
+
+    var person = {};
+    person.name = '홍길동';
+    person.age = 12;
+    // person.introduce = '저는 ' + person.name + '이고, 나이는 ' + person.age + '살 입니다.'
+    person.introduce = function(){
+        console.log('나는 홍길동이고 나이는 12살이야')
+    } //introduce: method (속성 중에 값이 함수인 애를 method라고 부른다.)
+
+    var person2 = {
+        name: '김철수',
+        age: 12,
+        introduce: function(){
+            console.log('나는 ' + person2.name + '고 나이는 ' + person2.age + '살이야');
+        }
+    };
+    
+    person.introduce()
+    person2.introduce()
+    </script>
+</body>
+</html> 

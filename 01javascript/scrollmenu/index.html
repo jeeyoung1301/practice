@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        html,body{height: 100%;}
+        .menu{
+            position: fixed;
+            width: 100%;
+            background: skyblue;
+            padding-left: 30px;
+        }
+        .menu > h1,
+        .menu > a{
+            float: left;
+        }
+        .menu > h1{
+            margin-right: 30px;
+            line-height: 40px;
+        }
+        .menu > a{
+            display: block;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        .menu > a.on{
+            background: orange;
+        }
+
+        .scene{
+            width: 100%;
+            height: 100%;
+            /* 뷰포트 크기  */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .scene.one{
+            background-image: url(../../images/pc01.jpg);
+        }
+        .scene.two{
+            background-image: url(../../images/pc02.jpg);
+        }
+        .scene.three{
+            background-image: url(../../images/pc03.jpg);
+        }
+
+        .scene div{
+            width: 50%;
+        }
+        .scene div h1{
+            font-size: 6vh;
+        }
+        .scene div h1:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                let scrollY = $(window).scrollTop
+
+                $('.scene').each(function(index){
+                    if(scrollY >)
+                }) 
+            })
+        })
+    </script>
+</head>
+<body>
+    <nav class="menu clearfix">
+        <h1><a href="#">LOGO</a></h1>
+        <a href="#v01" class="on">menu1</a>
+        <a href="#v02">menu2</a>
+        <a href="#v03">menu3</a>
+    </nav>
+    <section class="scene one" id="v01">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ullam ducimus, necessitatibus tempore sint sunt dolorum quia! Commodi, temporibus vitae?</p>
+        </div>
+    </section>
+    <section class="scene two" id="v02">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ullam ducimus, necessitatibus tempore sint sunt dolorum quia! Commodi, temporibus vitae?</p>
+        </div>
+    </section>
+    <section class="scene three" id="v03">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ullam ducimus, necessitatibus tempore sint sunt dolorum quia! Commodi, temporibus vitae?</p>
+        </div>
+    </section>
+</body>
+</html>
