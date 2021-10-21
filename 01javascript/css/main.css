@@ -142,12 +142,13 @@ a{
     width: 100%;
     display: none;
 }
-#show-scene-0 #scroll-section-0,
-#show-scene-1 #scroll-section-1,
-#show-scene-2 #scroll-section-2,
-#show-scene-3 #scroll-section-3{
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem{
     display: block;
 }
+/* 스크롤하면 body에 id="show-scene-0" 추가하게 해서 보이기*/
 
 @media screen and (min-width:1024px){
     #scroll-section-0 h1{

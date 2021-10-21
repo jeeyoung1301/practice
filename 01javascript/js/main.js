@@ -49,28 +49,56 @@
             sceneInfo[i].scrollHeight=sceneInfo[i].heightNum*window.innerHeight;
             sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`
         }
+
+        yOffset = window.pageYOffset
+        let totalScrollHeight =0;
+        for (let i=0;i < sceneInfo.length; i++){
+            totalScrollHeight = totalScrollHeight + sceneInfo[i].scrollHeight;
+            // totalScrollHeight += sceneInfo[i].scrollHeight;
+            if(totalScrollHeight >= yOffset){
+                currentScene = i;
+                break;
+            }
+            // 총 스크롤 높이가(totalScrollHeight) 브라우저 높이(pageYOffset)와 
+            // 같거나 높으면 현재의 i를 currentScene으로 설정하고 멈춤 
+        }
+        document.body.setAttribute('id',`show-scene-${currentScene}`)
     }
-    function scrollLoop(){
-        prevScrollHeight = 0
+    function scrollLoop(){ //현재 몇번째 씬이 활성화 중인지 판별
+        prevScrollHeight = 0 //이전 스크롤세션들의 높이의 합 
+        // currentScene : 현재 활성화된 씬
         for(let i=0;i<currentScene;i++){
             prevScrollHeight = prevScrollHeight + sceneInfo[i].scrollHeight;
         }
 
         if(yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight){
-            currentScene++;
+            currentScene++; // 다음 씬 활성화
+            document.body.setAttribute('id',`show-scene-${currentScene}`)
         }
         if(yOffset < prevScrollHeight){
             if(currentScene === 0) return; // 브라우저 바운스 효과로 인해 마이너스가 되는 것을 방지(모바일)
-            currentScene--;
+            currentScene--; //이전 씬 활성화
+            document.body.setAttribute('id',`show-scene-${currentScene}`)
         }
-        console.log(currentScene)
+        //각각 활성화될 때마다 body에 id="show-scene-currentScene$" 추가하여
+        // sticky-elem가 보이도록 해줌
     }
 
 
-    window.addEventListener('resize',setLayout);
     window.addEventListener('scroll',function(){
         yOffset = window.pageYOffset;
         scrollLoop();
-    })
-    setLayout();
+    });
+    //scroll하면 yOffset(pageYOffset)이랑 scrollLoop(현재 몇 번째 씬 활성화인지) 함수 실행
+
+    window.addEventListener('load',setLayout);
+    // 처음 load시 스크롤 섹션의 높이 세팅 // 이미지 소스까지 모두 로드되고 실행 / 이미지도 필요하고 로딩페이지 쓸거기 때문에 이거 씀
+   
+    //window.addEventListener('DOMContentLoaded',setLayout); 
+    // html 객체들만 로드가 끝나면 바로 실행됨 -> 실행 시점이 빠름->많이 씀
+
+    window.addEventListener('resize',setLayout);
+    //창크기 조절하면(resize) setLayout(각 스크롤 섹션의 높이) 함수 실행
+
+
 }) ();
