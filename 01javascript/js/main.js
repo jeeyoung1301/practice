@@ -64,6 +64,7 @@
         }
         document.body.setAttribute('id',`show-scene-${currentScene}`)
     }
+    
     function scrollLoop(){ //현재 몇번째 씬이 활성화 중인지 판별
         prevScrollHeight = 0 //이전 스크롤세션들의 높이의 합 
         // currentScene : 현재 활성화된 씬
