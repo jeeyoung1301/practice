@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+a,
+a:visited,
+a:link {
+	text-decoration: none;
+	color: #333;
+}
+.clearfix {
+	clear: both;
+	content: "";
+	display: block;
+}
