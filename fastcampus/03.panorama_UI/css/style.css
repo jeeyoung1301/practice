@@ -33,9 +33,9 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  position: relative;
   -webkit-perspective: 1300px;
           perspective: 1300px;
-  position: relative;
 }
 
 .wrap > video {
@@ -57,6 +57,10 @@ body {
   left: 50%;
   margin-left: -300px;
   margin-top: -400px;
+  -webkit-animation: ani linear 30s infinite;
+          animation: ani linear 30s infinite;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .wrap #circle article {
@@ -65,7 +69,26 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.wrap #circle article h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  color: lightcyan;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px aqua;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.wrap #circle article:hover h1 {
+  top: -60px;
+  opacity: 1;
 }
 
 .wrap #circle article .inner {
@@ -77,7 +100,7 @@ body {
   width: 100%;
   height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   padding: 50px;
   position: relative;
   overflow: hidden;
@@ -91,6 +114,11 @@ body {
   opacity: 1;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+.wrap #circle article.face1 {
+  -webkit-transform: rotateY(0deg) translateZ(-764px);
+          transform: rotateY(0deg) translateZ(-764px);
 }
 
 .wrap #circle article.face1 .inner {
@@ -149,6 +177,11 @@ body {
   transition: 0.5s;
 }
 
+.wrap #circle article.face2 {
+  -webkit-transform: rotateY(45deg) translateZ(-764px);
+          transform: rotateY(45deg) translateZ(-764px);
+}
+
 .wrap #circle article.face2 .inner div h2 {
   font: bold 24px/1 "Orbitron";
   color: lightcyan;
@@ -178,6 +211,11 @@ body {
 .wrap #circle article.face2 .inner div:hover h2,
 .wrap #circle article.face2 .inner div:hover h3 {
   text-shadow: 0 0 10px aqua;
+}
+
+.wrap #circle article.face3 {
+  -webkit-transform: rotateY(90deg) translateZ(-764px);
+          transform: rotateY(90deg) translateZ(-764px);
 }
 
 .wrap #circle article.face3 .inner > div {
@@ -228,6 +266,11 @@ body {
   color: aqua;
 }
 
+.wrap #circle article.face4 {
+  -webkit-transform: rotateY(135deg) translateZ(-764px);
+          transform: rotateY(135deg) translateZ(-764px);
+}
+
 .wrap #circle article.face4 .inner div h2 {
   font-size: 22px;
   margin-bottom: 15px;
@@ -261,6 +304,11 @@ body {
   color: aqua;
 }
 
+.wrap #circle article.face5 {
+  -webkit-transform: rotateY(180deg) translateZ(-764px);
+          transform: rotateY(180deg) translateZ(-764px);
+}
+
 .wrap #circle article.face5 .inner div img {
   margin-bottom: 40px;
 }
@@ -292,6 +340,11 @@ body {
 
 .wrap #circle article.face5 .inner div:hover .reflect {
   top: -40%;
+}
+
+.wrap #circle article.face6 {
+  -webkit-transform: rotateY(225deg) translateZ(-764px);
+          transform: rotateY(225deg) translateZ(-764px);
 }
 
 .wrap #circle article.face6 .inner > div {
@@ -345,6 +398,11 @@ body {
   text-shadow: 0 0 10px aqua;
 }
 
+.wrap #circle article.face7 {
+  -webkit-transform: rotateY(270deg) translateZ(-764px);
+          transform: rotateY(270deg) translateZ(-764px);
+}
+
 .wrap #circle article.face7 .inner > div > div {
   width: 100%;
   height: 100%;
@@ -386,7 +444,8 @@ body {
 }
 
 .wrap #circle article.face8 {
-  display: block;
+  -webkit-transform: rotateY(315deg) translateZ(-764px);
+          transform: rotateY(315deg) translateZ(-764px);
 }
 
 .wrap #circle article.face8 .inner div:nth-of-type(1) {
@@ -468,5 +527,27 @@ body {
           transform: scale(1.2);
   color: lightcyan;
   text-shadow: 0 0 10px aqua;
+}
+
+@-webkit-keyframes ani {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes ani {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
