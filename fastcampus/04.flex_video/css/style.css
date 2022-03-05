@@ -16,6 +16,213 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
-  color: #333;
+}
+
+body {
+  background: #333;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main header {
+  width: 20%;
+  height: 100%;
+  padding: 10vh 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+main header h1 {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main header h1 i {
+  font-size: 5vw;
+  margin-bottom: 15px;
+}
+
+main header h1 span {
+  font: normal 0.8vw/1 "arial";
+}
+
+main header p {
+  font: normal 11px/1.2 "arial";
+  color: #888;
+  text-align: center;
+}
+
+main section {
+  width: 80%;
+  height: 100%;
+  padding-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main section article {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+}
+
+main section article .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  padding: 50px 30px 100px;
+}
+
+main section article .inner .txt {
+  padding-top: 90px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main section article .inner .txt h2 {
+  font: normal 2vw/1 "Hubballi";
+  color: #fff;
+  margin-bottom: 40px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main section article .inner .txt h2:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #777;
+  margin-top: 20px;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+main section article .inner .txt p {
+  font: 14px/1.4 "Hubballi";
+  color: #777;
+}
+
+main section article .inner figure {
+  width: 100%;
+  height: 15vh;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  top: 0;
+  position: relative;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  -webkit-filter: saturate(0.2);
+          filter: saturate(0.2);
+}
+
+main section article .inner figure video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main section article:hover {
+  -webkit-box-flex: 1.4;
+      -ms-flex: 1.4;
+          flex: 1.4;
+}
+
+main section article:hover:before {
+  left: 0;
+  opacity: 1;
+}
+
+main section article:hover .inner figure {
+  height: 20vh;
+  top: 25px;
+  -webkit-filter: saturate(1.2);
+          filter: saturate(1.2);
+}
+
+main section article:hover .inner .txt {
+  padding-top: 20px;
+}
+
+main section article:hover .inner .txt h2 {
+  font-size: 4vw;
+}
+
+main section article:hover .inner .txt h2:after {
+  width: 120px;
+  background: orange;
+}
+
+main section article:before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 95%;
+  position: absolute;
+  top: 0;
+  left: -100px;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+main nav {
+  position: absolute;
+  top: 4vh;
+  right: 5vw;
+}
+
+main nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main nav ul li {
+  margin: 15px;
+}
+
+main nav ul li a {
+  font-size: 18px;
+  color: #bbb;
 }
 /*# sourceMappingURL=style.css.map */
