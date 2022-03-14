@@ -81,3 +81,50 @@ main {
 		}
 	}
 }
+
+@media screen and (max-width: 1199px) {
+	main {
+		margin-left: 0;
+	}
+}
+@media screen and (max-width: 899px) {
+	main {
+		section {
+			article {
+				width: 25%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 799px) {
+	main {
+		section {
+			article {
+				width: 33.3%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 699px) {
+	main {
+		section {
+			article {
+				width: 50%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 496px) {
+	main {
+		ul {
+			li {
+				width: 80px;
+			}
+		}
+		section {
+			article {
+				width: 100%;
+			}
+		}
+	}
+}
